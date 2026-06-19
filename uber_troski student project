@@ -1,0 +1,31 @@
+# %%
+print("TROSKI UBER")
+name = input("Enter your name:")
+print(f"welcome{name}")
+destinations = {1: ("Kejetia",5),2: ("KNUST", 8),3: ("Asokwa",10),4: ("Suame",7)}
+print("Available destinations")
+for key, value in destinations.items():
+    print(f"{key}: {value[0]} - GH$ {value[1]}")
+choice = int(input("Choose your destination number:"))
+passengers = int(input("Enter number of passengers:"))
+destination = destinations[choice][0]
+fare = destinations[choice][1]
+total_fare = fare*passengers
+passenger_type = input("Enter passenger type (student/child/regular:")
+if passenger_type == "student":
+    discount = total_fare * 0.10
+elif passenger_type == "child":
+    discount = total_fare * 0.20
+else:
+    discount = 0
+amount_payable = total_fare - discount
+
+print("TRIP SUMMARY")
+print("passenger name:",name)
+print("Destination:",destination)
+print("Total Fare:GH$",total_fare)
+print("passengers:",passengers)
+print("amount payable:GH$",amount_payable)
+print("Discount:GH$",discount)
+print("Thank you for choosing Troski Uber!")
+# %%
